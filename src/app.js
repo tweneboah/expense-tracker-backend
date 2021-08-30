@@ -10,9 +10,13 @@ const accountStatsRoute = require("./route/stats/stats");
 //dotenv
 dotenv.config();
 const app = express();
-// app.get("/", function (req, res) {
-//   res.json("server");
-// });
+app.get("/", (req, res) => {
+  res.json({
+    app: "Expenses-Tracker",
+    developer: "inovotek",
+    youtubeChannel: "i-Novotek",
+  });
+});
 //DB
 dbConnect();
 
