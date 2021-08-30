@@ -1,1 +1,1 @@
-# expense-tracker-backend
+# mern-expenses-tracker-backend-guide
