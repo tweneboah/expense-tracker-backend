@@ -11,8 +11,8 @@ const authMiddleware = require("../../middlewares/auth/authMiddleware");
 const incomeRoute = express.Router();
 
 incomeRoute.post("/", authMiddleware, createIncome);
-incomeRoute.get("/", fetchIncomesCtrl);
-incomeRoute.get("/:id", fetchIncomeCtrl);
-incomeRoute.put("/:id", updateIncomeCtrl);
-incomeRoute.delete("/:id", deletIncomeCtrl);
+incomeRoute.get("/", authMiddleware, fetchIncomesCtrl);
+incomeRoute.get("/:id", authMiddleware, fetchIncomeCtrl);
+incomeRoute.put("/:id", authMiddleware, updateIncomeCtrl);
+incomeRoute.delete("/:id", authMiddleware, deletIncomeCtrl);
 module.exports = incomeRoute;

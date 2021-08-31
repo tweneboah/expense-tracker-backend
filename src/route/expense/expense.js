@@ -11,8 +11,8 @@ const authMiddleware = require("../../middlewares/auth/authMiddleware");
 const expenseRoute = express.Router();
 
 expenseRoute.post("/", authMiddleware, createExpenseCtrl);
-expenseRoute.get("/", fetchExpensesCtrl);
-expenseRoute.get("/:id", fetchExpenseCtrl);
+expenseRoute.get("/", authMiddleware, fetchExpensesCtrl);
+expenseRoute.get("/:id", authMiddleware, fetchExpenseCtrl);
 expenseRoute.put("/:id", authMiddleware, updateExpenseCtrl);
 expenseRoute.delete("/:id", authMiddleware, deletExpenseCtrl);
 module.exports = expenseRoute;
